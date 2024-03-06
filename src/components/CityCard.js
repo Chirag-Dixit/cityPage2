@@ -7,46 +7,46 @@ const CityCard = (prop) => {
   useEffect(() => {
     async function checkWeather(cityName) {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}`;
-  
+
       const response = await fetch(apiUrl + `&appid=${apiKey}`);
       var data = await response.json();
-  
+
       setTemp(data);
     }
     checkWeather(prop.data);
   }, []);
 
-  // console.log(temp.name, temp.main)
-
-  // const properties = Object.entries(temp.main).map(([key,value]) => {
-  //   return (
-  //     <div>{key} : {value.toString()}</div>
-  //   )
-  // })
-
   return (
-    <div className="cityCard">
-      <h2>
-        {prop.data}
-      </h2>
-      {/* {temp.main.feels_like}
-      {temp.main.humidity}
-      {temp.main.pressure}
-      {temp.main.temp}
-      {temp.main.temp_max}
-      {temp.main.temp_min} */}
-      <p>
-        Temperature: {temp?.main?.temp}
-      </p>
-      <p>
-        Humidity: {temp?.main?.humidity}
-      </p>
-      <p>
-        Max-Temperature: {temp?.main?.temp_max}
-      </p>
-      <p>
-        Min-Temperature: {temp?.main?.temp_min}
-      </p>
+    <div>
+      {temp?.main ? (
+        <div className="cityCard">
+          <h2>{prop.data}</h2>
+          <div className="properties">
+            <p>
+              Temperature:
+              <b>{temp?.main?.temp}</b>
+            </p>
+            <p>
+              Feels Like:
+              <b>{temp?.main?.feels_like}</b>
+            </p>
+            <p>
+              Humidity:
+              <b>{temp?.main?.humidity}</b>
+            </p>
+            <p>
+              Max-Temperature:
+              <b>{temp?.main?.temp_max}</b>
+            </p>
+            <p>
+              Min-Temperature:
+              <b>{temp?.main?.temp_min}</b>
+            </p>
+          </div>
+        </div>
+      ) : (
+        <h1>Invalid Search Input</h1>
+      )}
     </div>
   );
 };

@@ -2,26 +2,17 @@ import "./App.css";
 import Searchbar from "./components/Searchbar";
 import CityCard from "./components/CityCard";
 import { useState } from "react";
+import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
 
 function App() {
-  const [search, setSearch] = useState("")
-  // const [cityList, setCityList] = useState([])
-
-  const cityNames = [
-    'Agra', 'Mathura', 'Delhi', 'Mumbai'
-  ];
-
-  let cityList = cityNames.map((city, index)=>{
-    return <CityCard data={city} key={index}/>
-  })
-
-  
   return (
     <div className="App">
-      <Searchbar setSearch={setSearch}/>
-      <div className="cityList">
-        {search == '' ? cityList : <CityCard data={search}/>}
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="CityPage" element={<CityPage />} />
+      </Routes>
     </div>
   );
 }
