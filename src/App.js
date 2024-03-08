@@ -1,17 +1,17 @@
 import "./App.css";
-import Searchbar from "./components/Searchbar";
-import CityCard from "./components/CityCard";
-import { useState } from "react";
-import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
+import CityPage from "./components/CityPage";
+import { useState } from "react";
 
 function App() {
+  const [pageItems, setPageItems] = useState({});
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="CityPage" element={<CityPage />} />
+        <Route path="/" element={<HomePage setPageItems={setPageItems}/>} />
+        <Route path="CityPage" element={<CityPage pageItems={pageItems} setPageItems={setPageItems} />} />
       </Routes>
     </div>
   );

@@ -4,7 +4,8 @@ import Footer from './Footer';
 import Searchbar from './Searchbar';
 import CityCard from './CityCard';
 
-const HomePage = () => {
+const HomePage = (prop) => {
+  const {setPageItems} = prop
   const [search, setSearch] = useState("");
 
   const cityNames = [
@@ -27,7 +28,7 @@ const HomePage = () => {
   ];
 
   let cityList = cityNames.map((city, index) => {
-    return <CityCard data={city} key={index} />;
+    return <CityCard setPageItems={setPageItems} data={city} key={index} />;
   });
 
   return (
@@ -37,7 +38,7 @@ const HomePage = () => {
           {search == "" ? (
             cityList
           ) : (
-            <CityCard data={search} className="searched" />
+            <CityCard setPageItems={setPageItems} data={search} className="searched" />
           )}
         </div>
         <Footer />
