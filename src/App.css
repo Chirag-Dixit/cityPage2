@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .searchBar {
   margin: auto;
   width: 100%;
@@ -11,7 +10,7 @@
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid black;
-  background-color: #80BCBD;
+  background-color: #80bcbd;
 }
 
 .search {
@@ -30,8 +29,8 @@
   cursor: pointer;
 }
 
-.searchBar button:hover{
-  background-color: #D5F0C1;
+.searchBar button:hover {
+  background-color: #d5f0c1;
 }
 
 .searchBar button:active {
@@ -50,14 +49,14 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #D5F0C1;
+  background-color: #d5f0c1;
 }
 
-.cityCard h2{
+.cityCard h2 {
   border-bottom: 2px solid black;
   margin-top: auto;
   padding: 5px;
-  background-color: #AAD9BB;
+  background-color: #aad9bb;
 }
 
 .cityList {
@@ -72,7 +71,7 @@
   margin-bottom: 100px;
 }
 
-.properties{
+.properties {
   text-align: left;
   padding-left: 15px;
   padding-bottom: 20px;
@@ -80,23 +79,67 @@
   font-weight: bold;
 }
 
-.logo{
+.logo {
   height: 100px;
   width: 100px;
 }
 
-b{
+b {
   margin-left: 4px;
   color: red;
 }
 
-.footer{
+.footer {
   position: fixed;
   bottom: 0;
   height: 30px;
   width: 100%;
-  background-color: #F9F7C9;
+  background-color: #f9f7c9;
   border-top: 2px solid black;
   font-weight: bolder;
   padding: 10px;
+}
+
+.cityPage {
+  font-weight: bold;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border: 2px solid black;
+  margin-top: 10px;
+  background-color: beige;
+}
+
+.cityPage h1 {
+  width: 100%;
+  margin-top: auto;
+  border-bottom: 2px solid black;
+  background-color: #80bcbd;
+}
+
+.cityPage div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  margin-top: 20px;
+  width: 10%;
+  border: 2px solid black;
+  border-radius: 2px;
+  color: green;
+  font-weight: bolder;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.back:hover {
+  background-color: #c6bfbf;  
+}
+
+.back:active{
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloud } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Searchbar = (prop) => {
   const { setSearch } = prop;
@@ -25,12 +26,14 @@ const Searchbar = (prop) => {
 
   return (
     <div className="searchBar">
-      <FontAwesomeIcon
-        icon={faCloud}
-        beat
-        size="lg"
-        style={{ color: "#072a45", marginRight: "20px" }}
-      />
+      <Link to={'/'}>
+        <FontAwesomeIcon
+          icon={faCloud}
+          beat
+          size="lg"
+          style={{ color: "#072a45", marginRight: "20px" }}
+        />
+      </Link>
       <input
         onChange={handleChange}
         type="text"
